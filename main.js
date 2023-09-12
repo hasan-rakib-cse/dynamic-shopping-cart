@@ -1,7 +1,6 @@
 document.getElementById('phoneIncrease').addEventListener('click', function() {
   handleProducrChange(true);
 })
-
 document.getElementById('phoneDecrease').addEventListener('click', function() {
   handleProducrChange(false)
 })
@@ -17,15 +16,13 @@ function handleProducrChange(isIncrease) {
     phoneNewCount = phoneCount - 1;
   }
   phoneInput.value = phoneNewCount;
-  const phoneTotal = phoneNewCount * 200;
-  document.getElementById('phoneTotal').innerHTML = phoneTotal;
+  const phoneTotal = (phoneNewCount * 200.20).toFixed(2);
+  document.getElementById('phoneTotal').innerText = phoneTotal;
 }
-
 
 document.getElementById('caseIncrease').addEventListener('click', function() {
   handleCaseChange(true);
 })
-
 document.getElementById('caseDecrease').addEventListener('click', function() {
   handleCaseChange(false);
 })
@@ -41,6 +38,6 @@ function handleCaseChange(isIncrease) {
     caseNewCount = caseCount - 1;
   }
   caseInput.value = caseNewCount;
-  const caseTotal = caseNewCount * 50;
+  const caseTotal = (caseNewCount * 50.25).toFixed(2);
   document.getElementById('caseTotal').innerText = caseTotal;
 }
