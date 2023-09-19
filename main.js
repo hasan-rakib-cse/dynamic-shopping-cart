@@ -14,10 +14,10 @@ function handleProductChange(product, isIncrease) {
 
   let productTotal = 0;
   if(product == 'phone') {
-      productTotal = (productNewCount * 200.20).toFixed(2);
+      productTotal = parseFloat((productNewCount * 200.20).toFixed(2));
   }
   if(product == 'case') {
-      productTotal = (productNewCount * 50.25).toFixed(2);
+      productTotal = parseFloat((productNewCount * 50.25).toFixed(2));
   }
 
   document.getElementById(product + 'Total').innerText = productTotal;
@@ -31,15 +31,15 @@ function calculateTotal() {
   const caseCount = getInputValue('case');
 
   // Sub Total
-  const subTotal = (phoneCount * 200.20 + caseCount * 50.25).toFixed(2);
+  const subTotal = parseFloat((phoneCount * 200.20 + caseCount * 50.25).toFixed(2));
   document.getElementById('subTotal').innerText = subTotal;
 
   // Tax
-  const totalTax = (subTotal * .05).toFixed(2);
+  const totalTax = parseFloat((subTotal * .05).toFixed(2));
   document.getElementById('tax').innerText = totalTax;
 
   // Grand Total
-  const grandTotal = (parseFloat(subTotal + totalTax)).toFixed(2)
+  const grandTotal = parseFloat((parseFloat(subTotal + totalTax)).toFixed(2));
   document.getElementById('total').innerText = grandTotal;
 }
 
